@@ -8,7 +8,7 @@ import java.util.List;
 public class World implements CitizensQuantity {
     private final List<Contintent> wholeWorld = new ArrayList<>();
 
-    public List<Contintent> addContinentsCitizens(Contintent contintent) {
+    public List<Contintent> addWorldPeoples(Contintent contintent) {
         wholeWorld.add(contintent);
         return wholeWorld;
     }

@@ -6,7 +6,7 @@ import java.util.List;
 public final class Contintent {
     private final List<Country> contintentName = new ArrayList<>();
 
-    public List<Country> addCitizensToContinetnt (Country country) {
+    public List<Country> addCountryPeoples (Country country) {
         contintentName.add(country);
         return contintentName;
     }
