@@ -3,7 +3,9 @@ package com.kodilla.stream.portfolio;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.Duration;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.*;
@@ -154,17 +156,15 @@ public class BoardTestSuite {
                 .map(t -> t.getCreated())
                 .count();
 
-        System.out.println(longTasks);
         List<TaskList> inProgressTwo = new ArrayList<>();
         inProgressTwo.add(new TaskList("In progress"));
-        int days = project.getTaskLists().stream()
+        long days = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .map(t -> t.getCreated())
-                .map(d -> d.compareTo(LocalDate.now()))
-                .reduce(0, Integer::sum);
+                .map(t -> ChronoUnit.DAYS.between(t.getCreated(), LocalDate.now()))
+                .reduce(0l, Long::sum);
 
-        double averageDays = days * -1 / longTasks;
+        double averageDays = days / longTasks;
 
         //Then
         Assert.assertEquals(3, longTasks);

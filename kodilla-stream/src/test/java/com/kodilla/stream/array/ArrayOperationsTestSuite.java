@@ -8,12 +8,12 @@ public class ArrayOperationsTestSuite {
     @Test
     public void testGetAverage() {
         //Given
-        int[] a = {10, 14, 12, 1, 5, 7, 9, 11, 33, 2, 5, 29, 6, 14, 17, 43, 21, 8, 19, 32};
+        int[] a = {3,4,2,76,3,4,7,44,77,2,9,66,3,65,24,67,43,76,32,4};
 
         //When
         double z = ArrayOperations.getAverage(a);
 
         //Then
-        Assert.assertEquals(14.9, z, 0);
+        Assert.assertEquals(30.55, z, 0);
     }
 }

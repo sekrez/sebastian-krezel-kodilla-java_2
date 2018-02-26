@@ -1,5 +1,7 @@
 package com.kodilla.stream.array;
 
+import javax.validation.constraints.AssertTrue;
+import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.stream.IntStream;
 
@@ -11,10 +13,12 @@ public interface ArrayOperations {
         System.out.println("\b");
 
         OptionalDouble average = IntStream.range(0, numbers.length)
-                .mapToDouble(a -> numbers[a])
+                .map(a -> numbers[a])
                 .average();
-
-        System.out.println(average.getAsDouble());
-        return average.getAsDouble();
+        if (average.isPresent()) {
+            return average.getAsDouble();
+        } else {
+            return 0.0;
+        }
     }
 }
