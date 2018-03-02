@@ -5,7 +5,7 @@ public class ExceptionHandling {
         SecondChallange secondChallange = new SecondChallange();
 
         try {
-            secondChallange.probablyIWillThrowException(1, 1.4);
+            secondChallange.probablyIWillThrowException(1, 1.5);
         } catch (Exception e) {
             System.out.println("you have entered incorrect values for probablyIWillThrowException method !!!");
         } finally {
