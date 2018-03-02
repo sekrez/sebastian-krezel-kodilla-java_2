@@ -1,3 +1,5 @@
 include 'kodilla-stream'
 include 'Testy_prywatne'
+include 'kodilla-exception'
+include 'kodilla-good-patterns'
 
