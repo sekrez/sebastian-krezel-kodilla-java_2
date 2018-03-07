@@ -15,7 +15,10 @@ final class ArrivalPortsList {
         flightConnections.put("Poznań", true);
         flightConnections.put("Rzeszów", true);
         flightConnections.put("Szczecin", true);
-return new HashMap<String, Boolean>(flightConnections);
+        flightConnections.put("London", false);
+        flightConnections.put("Paris", false);
+        flightConnections.put("Berlin", false);
+        return new HashMap<String, Boolean>(flightConnections);
     }
 
 }
