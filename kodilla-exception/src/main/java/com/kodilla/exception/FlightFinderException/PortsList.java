@@ -3,11 +3,11 @@ package com.kodilla.exception.FlightFinderException;
 import java.util.HashMap;
 import java.util.Map;
 
-final class ArrivalPortsList {
+final class PortsList {
 
     public static HashMap<String, Boolean> getMap() {
         Map<String, Boolean> flightConnections = new HashMap<>();
-        flightConnections.put("Warszawa", true);
+        flightConnections.put("Warszawa",true);
         flightConnections.put("Kraków", true);
         flightConnections.put("Gdańsk", true);
         flightConnections.put("Katowice", true);
