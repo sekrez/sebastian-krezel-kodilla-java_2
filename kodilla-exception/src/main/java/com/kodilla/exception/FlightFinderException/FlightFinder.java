@@ -14,24 +14,19 @@ class FlightFinder {
         System.out.println();
         if (departurePort.equals(arrivalPort)) {
             System.out.println("Nie możemy wyznaczyć odlotu i przylotu dla tego samekgo miasta");
-        }
-
-        if (airPorts.containsKey(departurePort)) {
-            if (airPorts.containsKey(arrivalPort)) {
-                if (airPorts.get(departurePort) == Boolean.TRUE && airPorts.get(arrivalPort) == Boolean.TRUE) {
-                    flightGenerator.generateFlights(flight);
-                    System.out.println();
-                    System.out.println("Czy dokonać rezerwacji lotu z: " + departurePort + " do miasta " + arrivalPort + "?");
-                } else if (airPorts.get(departurePort) == Boolean.FALSE) {
-                    System.out.println("Przepraszamy ale odlotów z tego portu lotniczego jeszcze nie obsługujemy");
-                }
-                System.out.println("Obecnie obsługujemy " + airPorts.size() + " lotów docelowych.");
-                System.out.println("Ale tam jeszcze nie latamy !!!");
-            } else {
-                throw new RouteNotFoundException_1("Wyjątek dla lotniska przylotów");
-            }
-        } else {
+        } else if (!airPorts.containsKey(arrivalPort)) {
             throw new RouteNotFoundException_2("Wyjątek dla lotniska odlotów");
+        } else if (!airPorts.containsKey(departurePort)) {
+            throw new RouteNotFoundException_1("Wyjątek dla lotniska przylotów");
+        } else if (airPorts.get(departurePort) == Boolean.TRUE && airPorts.get(arrivalPort) == Boolean.TRUE) {
+            flightGenerator.generateFlights(flight);
+            System.out.println();
+            System.out.println("Czy dokonać rezerwacji lotu z: " + departurePort + " do miasta " + arrivalPort + "?");
+        } else if (airPorts.get(departurePort) == Boolean.FALSE) {
+            System.out.println("Przepraszamy ale odlotów z tego portu lotniczego jeszcze nie obsługujemy");
+        } else {
+            System.out.println("Obecnie obsługujemy " + airPorts.size() + " lotów docelowych.");
+            System.out.println("Ale tam jeszcze nie latamy !!!");
         }
     }
 }
