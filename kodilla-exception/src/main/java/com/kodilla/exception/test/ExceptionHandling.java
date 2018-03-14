@@ -7,7 +7,7 @@ public class ExceptionHandling {
         try {
             secondChallange.probablyIWillThrowException(1, 1.5);
         } catch (Exception e) {
-            System.out.println("you have entered incorrect values for probablyIWillThrowException method !!!");
+            System.out.println("You have entered incorrect values for probablyIWillThrowException method !!!");
         } finally {
             System.out.println(" END OF WORK - EXIT");
         }
