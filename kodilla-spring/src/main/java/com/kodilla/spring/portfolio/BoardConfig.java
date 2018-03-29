@@ -9,11 +9,7 @@ import java.util.List;
 
 @Configuration
 public class BoardConfig {
-    @Bean
-    @Qualifier("board_1")
-    public Board board() {
-
-
-
-
+//    @Bean
+//    @Qualifier("board_1")
+//    public Board board() {
 }
