@@ -1,46 +1,28 @@
+
 package com.kodilla.spring.portfolio;
 
+import javafx.concurrent.Task;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
 public class BoardTestSuite {
-
     @Test
-    public void testBoard(){
-        //Given
+    public void testTaskAdd() {
+        // Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
-
-        ArrayList<String> testTask = new ArrayList<>();
-        //Then
-        TaskList taskList = new TaskList();
-
-
-
-
+        Board board = context.getBean(Board.class);
 
         //When
-
-    }
-
-    public void testTaskAdd(){
-
-        //Given
-
+        TaskList task1 = board.getToDoList();
         //Then
-
-        //When
+        System.out.println(task1.taskAmount());
 
     }
-
-
 }
