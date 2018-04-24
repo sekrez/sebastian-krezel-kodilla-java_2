@@ -14,7 +14,7 @@ public class BoardConfig {
         ArrayList<String> toDoList = new ArrayList<>();
         toDoList.add("First task to do in future");
         toDoList.add("Second task to do in near future");
-        toDoList.add("Therd task to do in future");
+        toDoList.add("Third task to do in future");
         toDoList.add("Fourth task to od future");
         return new TaskList(toDoList);
     }
@@ -34,7 +34,7 @@ public class BoardConfig {
         ArrayList<String> theDoneList = new ArrayList<>();
         theDoneList.add("Learn basic Java");
         theDoneList.add("Find any work");
-        theDoneList.add("");
+        theDoneList.add("Lost driving licence");
         theDoneList.add("Buy a new router");
         return new TaskList(theDoneList);
     }
