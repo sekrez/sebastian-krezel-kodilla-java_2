@@ -1,9 +1,9 @@
 package com.kodilla.spring.portfolio;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+        import org.junit.Assert;
+        import org.junit.Test;
+        import org.springframework.context.ApplicationContext;
+        import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
 public class BoardTestSuite {
@@ -20,9 +20,9 @@ public class BoardTestSuite {
         TaskList doneList = board.getDoneList();
 
         //Then
-        Assert.assertEquals(toDoList.taskAmount(),5);
+        Assert.assertEquals(toDoList.taskAmount(), 5);
         Assert.assertEquals(inProgressList.taskAmount(), 4);
-        Assert.assertEquals(doneList.taskAmount(),4);
+        Assert.assertEquals(doneList.taskAmount(), 4);
     }
 
     @Test
@@ -43,8 +43,8 @@ public class BoardTestSuite {
         doneList.addTask("Finish Exercise 10.2");
 
         //Then
-        Assert.assertEquals(toDoList.getTasks().get(toDoList.taskAmount()-1), "Six task to do in future");
-        Assert.assertEquals(inProgressList.getTasks().get(inProgressList.taskAmount()-1), "Write, Clean and finish Exercice 10.3");
-        Assert.assertEquals(doneList.getTasks().get(doneList.taskAmount()-1), "Finish Exercise 10.2");
+        Assert.assertEquals(toDoList.getTasks().get(toDoList.taskAmount() - 1), "Six task to do in future");
+        Assert.assertEquals(inProgressList.getTasks().get(inProgressList.taskAmount() - 1), "Write, Clean and finish Exercice 10.3");
+        Assert.assertEquals(doneList.getTasks().get(doneList.taskAmount() - 1), "Finish Exercise 10.2");
     }
 }
