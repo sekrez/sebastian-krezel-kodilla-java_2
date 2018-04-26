@@ -1,22 +1,28 @@
 package com.kodilla.spring.portfolio;
 
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.stereotype.Component;
-
-        import java.util.ArrayList;
-        import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TaskList {
     private final List<String> tasks;
 
-    public TaskList(List<String> tasks) {
-        this.tasks = new ArrayList<>();
+    public TaskList(final List<String> tasks) {
+        this.tasks = tasks;
     }
 
-    public int taskAmount(){
+    public int taskAmount() {
         return this.tasks.size();
     }
+
     public List<String> getTasks() {
         return this.tasks;
+    }
+
+    public String getThisTask(int task){
+        return tasks.get(task);
+    }
+
+    public void addTask(String task){
+        tasks.add(task);
     }
 }

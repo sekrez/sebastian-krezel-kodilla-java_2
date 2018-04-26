@@ -2,30 +2,29 @@ package com.kodilla.spring.portfolio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 @Service
 public class Board {
     @Autowired
-    @Qualifier("createToDoList")
+    @Qualifier("toDoList")
     private TaskList toDoList;
     @Autowired
-    @Qualifier("createInProgressList")
+    @Qualifier("progressList")
     private TaskList inProgressList;
     @Autowired
-    @Qualifier("createDoneList")
+    @Qualifier("doneList")
     private TaskList doneList;
 
     public TaskList getToDoList() {
-        return toDoList;
+        return this.toDoList;
     }
 
     public TaskList getInProgressList() {
-        return inProgressList;
+        return this.inProgressList;
     }
 
     public TaskList getDoneList() {
-        return doneList;
+        return this.doneList;
     }
 }
