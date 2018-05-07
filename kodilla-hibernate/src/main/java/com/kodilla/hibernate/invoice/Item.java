@@ -4,12 +4,16 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name="ITEMS")
 public class Item {
 private int id;
 private Product product;
 private BigDecimal price;
 private int quantity;
 private BigDecimal value;
+private Invoice invoice;
+
 
     public Item(){
 
@@ -29,7 +33,7 @@ private BigDecimal value;
         return id;
     }
 
-    @Column(name = "Encja 1:N")
+    @Column(name = "PRODUCT")
     public Product getProduct() {
         return product;
     }
@@ -46,9 +50,15 @@ private BigDecimal value;
         return quantity;
     }
 
-    @Column(name="Value")
+    @Column(name="VALUE")
     public BigDecimal getValue() {
         return value=price.multiply(new BigDecimal(quantity));
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "INVOICE_ID")
+    public Invoice getInvoice() {
+        return invoice;
     }
 
     private void setId(int id) {
@@ -69,6 +79,10 @@ private BigDecimal value;
 
     private void setValue(BigDecimal value) {
         this.value = value;
+    }
+
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
     }
 }
 
