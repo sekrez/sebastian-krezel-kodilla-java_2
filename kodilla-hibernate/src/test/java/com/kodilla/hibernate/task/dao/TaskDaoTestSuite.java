@@ -32,7 +32,7 @@ public class TaskDaoTestSuite {
         Assert.assertEquals(id, readTask.getId());
 
         //CleanUp
-        taskDao.delete(id);
+        //taskDao.delete(id);
     }
     @Test
     public void testTaskDaoFindByDuration() {

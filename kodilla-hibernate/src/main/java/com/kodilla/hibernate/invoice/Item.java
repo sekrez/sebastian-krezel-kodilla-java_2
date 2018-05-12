@@ -5,17 +5,16 @@ import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name="ITEMS")
+@Table(name = "ITEMS")
 public class Item {
-private int id;
-private Product product;
-private BigDecimal price;
-private int quantity;
-private BigDecimal value;
-private Invoice invoice;
+    private int id;
+    private Product product;
+    private BigDecimal price;
+    private int quantity;
+    private BigDecimal value;
+    private Invoice invoice;
 
-
-    public Item(){
+    public Item() {
 
     }
 
@@ -23,8 +22,8 @@ private Invoice invoice;
         this.product = product;
         this.price = price;
         this.quantity = quantity;
-        this.value = value;
     }
+
     @Id
     @GeneratedValue
     @NotNull
@@ -33,30 +32,30 @@ private Invoice invoice;
         return id;
     }
 
-    @Column(name = "PRODUCT")
+    @ManyToOne
+    @JoinTable(name = "ITEM_PRODUCT_ID")
     public Product getProduct() {
         return product;
     }
 
-    @NotNull
     @Column(name = "PRICE")
     public BigDecimal getPrice() {
         return price;
     }
 
-    @NotNull
-    @Column(name="QUANTITY")
+    @Column(name = "QUANTITY")
     public int getQuantity() {
         return quantity;
     }
 
-    @Column(name="VALUE")
+    @Column(name = "VALUE")
     public BigDecimal getValue() {
-        return value=price.multiply(new BigDecimal(quantity));
+        value = price.multiply(new BigDecimal(quantity));
+        return value;
     }
 
     @ManyToOne
-    @JoinColumn(name = "INVOICE_ID")
+    @JoinColumn(name = "ITEM_INVOICE_ID")
     public Invoice getInvoice() {
         return invoice;
     }
@@ -65,7 +64,7 @@ private Invoice invoice;
         this.id = id;
     }
 
-    private void setProduct(Product product) {
+    public void setProduct(Product product) {
         this.product = product;
     }
 
