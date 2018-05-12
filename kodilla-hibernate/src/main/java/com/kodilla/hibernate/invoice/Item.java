@@ -33,7 +33,7 @@ public class Item {
     }
 
     @ManyToOne
-    @JoinTable(name = "ITEM_PRODUCT_ID")
+    @JoinTable(name = "PRODUCT_ID")
     public Product getProduct() {
         return product;
     }
@@ -55,7 +55,7 @@ public class Item {
     }
 
     @ManyToOne
-    @JoinColumn(name = "ITEM_INVOICE_ID")
+    @JoinColumn(name = "INVOICE_ID")
     public Invoice getInvoice() {
         return invoice;
     }
