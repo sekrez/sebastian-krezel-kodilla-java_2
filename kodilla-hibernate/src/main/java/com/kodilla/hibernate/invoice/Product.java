@@ -10,7 +10,7 @@ import java.util.List;
 public class Product {
     private int id;
     private String name;
-    private List<Item> productToItems = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
 
     public Product() {
 
@@ -42,15 +42,15 @@ public class Product {
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    public List<Item> getProductToItems() {
-        return productToItems;
+    public List<Item> getItems() {
+        return items;
     }
 
     private void setName(String name) {
         this.name = name;
     }
 
-    public void setProductToItems(List<Item> produktItems) {
-        this.productToItems = productToItems;
+    public void setItems(List<Item> produktItems) {
+        this.items = items;
     }
 }

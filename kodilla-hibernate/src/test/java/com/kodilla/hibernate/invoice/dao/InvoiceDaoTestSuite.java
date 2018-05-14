@@ -37,16 +37,15 @@ public class InvoiceDaoTestSuite {
         Item item04 = new Item(product04, new BigDecimal(1), 5);
         Item item05 = new Item(product02, new BigDecimal(5), 3);
 
-        Invoice invoice1 = new Invoice("F1 05/05/2018");
+        Invoice invoice1 = new Invoice("FV 06/05/2018");
 
-
-        product01.getProductToItems().add(item01);
-        product02.getProductToItems().add(item02);
-        product03.getProductToItems().add(item03);
-        product04.getProductToItems().add(item04);
+        invoice1.getItems().add(item01);
+        invoice1.getItems().add(item02);
+        invoice1.getItems().add(item03);
 
         //When
         invoiceDao.save(invoice1);
+
 
         //Then
         //Do nothing
