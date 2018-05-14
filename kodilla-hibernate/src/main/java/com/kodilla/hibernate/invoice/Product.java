@@ -50,7 +50,7 @@ public class Product {
         this.name = name;
     }
 
-    public void setItems(List<Item> produktItems) {
+    public void setItems(List<Item> productItems) {
         this.items = items;
     }
 }
