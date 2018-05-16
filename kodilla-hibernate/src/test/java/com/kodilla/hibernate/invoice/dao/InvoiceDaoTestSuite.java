@@ -68,10 +68,10 @@ public class InvoiceDaoTestSuite {
         Assert.assertNotEquals(0,invoiceID);
 
         //Clean UP
-//        try {
-//            invoiceDao.delete(invoice1);
-//        } catch (Exception e) {
-        // do nothing
-//        }
+        try {
+            invoiceDao.delete(invoice);
+        } catch (Exception e) {
+//         do nothing;
+        }
     }
 }
